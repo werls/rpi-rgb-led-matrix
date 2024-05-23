@@ -26,7 +26,8 @@ static void DrawOnCanvas(Canvas *canvas) {
    * pixels. We wait between each step to have a slower animation.
    */
 
-  
+  canvas->Fill(0, 255, 0);
+  usleep(1 * 1000);
 
 
   // canvas->Fill(0, 0, 255);
