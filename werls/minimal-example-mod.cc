@@ -34,15 +34,17 @@ static void DrawOnCanvas(Canvas *canvas) {
       auto now = std::chrono::steady_clock::now();
       auto elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(now - start).count();
       
-      int r = (1 + sin(x + elapsed) / 8.0) * 127;
-      int g = (1 + sin(y + elapsed) / 8.0) * 127;
-      int b = (1 + sin(((x + y) + elapsed) / 8.0)) * 127;
+      // int r = (1 + sin(x + elapsed) / 8.0) * 127;
+      // int g = (1 + sin(y + elapsed) / 8.0) * 127;
+      // int b = (1 + sin(((x + y) + elapsed) / 8.0)) * 127;
 
-      r = std::clamp(r, 0, 255);
-      g = std::clamp(g, 0, 255);
-      b = std::clamp(b, 0, 255);
+      int c = (1 + sin(x + y + elapsed) / 8.0) * 127;
 
-      canvas->SetPixel(x, y, r, g, b);
+      // r = std::clamp(r, 0, 255);
+      // g = std::clamp(g, 0, 255);
+      // b = std::clamp(b, 0, 255);
+
+      canvas->SetPixel(x, y, c, c, c);
     }
   }
   }
