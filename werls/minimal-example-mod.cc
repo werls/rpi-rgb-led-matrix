@@ -38,7 +38,7 @@ static void DrawOnCanvas(Canvas *canvas) {
       // int g = (1 + sin(y + elapsed) / 8.0) * 127;
       // int b = (1 + sin(((x + y) + elapsed) / 8.0)) * 127;
 
-      int c = (sin(x / 64 + y / 64 + elapsed)) * 127;
+      int c = (sin(x / 64 + cos(y / 64) + elapsed)) * 127;
       c = std::clamp(c, 0, 255);
 
       // r = std::clamp(r, 0, 255);
