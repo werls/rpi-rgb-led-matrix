@@ -27,6 +27,7 @@ static void DrawOnCanvas(Canvas *canvas) {
 
   auto start = std::chrono::steady_clock::now();
 
+  while (!interrupt_received) {
   for (int y = 0; y < canvas->height(); y++) {
     for (int x = 0; x < canvas->width(); x++) {
 
@@ -44,6 +45,8 @@ static void DrawOnCanvas(Canvas *canvas) {
       canvas->SetPixel(x, y, r, g, b);
     }
   }
+  }
+
 }
 
 int main(int argc, char *argv[]) {
